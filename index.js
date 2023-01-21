@@ -6,7 +6,7 @@ const {connection} =require("./Config/db")
 const {signup}=require("./Routes/signup.route")
 const {login}=require("./Routes/login.route")
 const {auth}=require("./Middleware/authentication")
-// const {getProfile}=require("./Routes/getUser.route")
+const {getProfile}=require("./Routes/getUser.route")
 const {calculate}=require("./Routes/calculator.route")
 
 const app=express();
@@ -20,10 +20,10 @@ app.get("/",(req,res)=>{
     res.send("Welcome to home")
 })
 
-// app.use("/signup",signup)
+app.use("/signup",signup)
 app.use("/login",login)
 app.use(auth)
-// app.use("/getProfile",getProfile)
+app.use("/getProfile",getProfile)
 app.use("/calculate",calculate)
 
 
