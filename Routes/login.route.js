@@ -3,14 +3,14 @@ require("dotenv").config()
 const jwt =require("jsonwebtoken");
 const bcrypt=require("bcrypt");
 
-const {signUpModel}=require("../Models/signUp.model");
+const {signupModel}=require("../Models/signup.model")
 
 const login=Router();
 
 login.post("/",async(req,res)=>{
     const {email,password}=req.body;
     try{
-        const user=await signUpModel.find({email})
+        const user=await signupModel.find({email})
         if(user.length>0){
             const hash=user[0].password;
             bcrypt.compare(password,hash,(err,result)=>{

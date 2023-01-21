@@ -6,6 +6,6 @@ const signUpSchema=mongoose.Schema({
     password:String
 })
 
-const signUpModel=mongoose.model("auth",signUpSchema)
+const signupModel=mongoose.model("auth",signUpSchema)
 
-module.exports={signUpModel}
+module.exports={signupModel}
