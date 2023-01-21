@@ -20,7 +20,7 @@ app.get("/",(req,res)=>{
     res.send("Welcome to home")
 })
 
-app.use("/signup",signup)
+// app.use("/signup",signup)
 app.use("/login",login)
 app.use(auth)
 // app.use("/getProfile",getProfile)
