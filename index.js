@@ -3,10 +3,10 @@ require("dotenv").config();
 const cors = require("cors")
 
 const {connection} =require("./Config/db")
-const {signup} = require("./Routes/signup.route")
+const {signup}=require("./Routes/signup.route")
 const {login}=require("./Routes/login.route")
 const {auth}=require("./Middleware/authentication")
-const {getProfile}=require("./Routes/getUser.route")
+// const {getProfile}=require("./Routes/getUser.route")
 const {calculate}=require("./Routes/calculator.route")
 
 const app=express();
@@ -23,7 +23,7 @@ app.get("/",(req,res)=>{
 app.use("/signup",signup)
 app.use("/login",login)
 app.use(auth)
-app.use("/getProfile",getProfile)
+// app.use("/getProfile",getProfile)
 app.use("/calculate",calculate)
 
 
